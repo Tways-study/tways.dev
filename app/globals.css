@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ── */
+:root {
+  --accent:  #ff6b35;
+  --bg:      #0a0a0a;
+  --surface: #141414;
+  --text:    #f0ede8;
+  --muted:   #525252;
+  --border:  #1f1f1f;
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+
+/* Hide native cursor only on true pointer devices */
+@media (pointer: fine) {
+  body, a, button, [role="button"] { cursor: none; }
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar       { width: 2px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); }
+
+/* ── Custom cursor ── */
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  border: 1.5px solid rgba(255, 107, 53, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s, width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+}
+
+.cursor-ring.cursor-hovered {
+  width: 48px;
+  height: 48px;
+  border-color: var(--accent);
+}
+
+/* ── Grid background ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 107, 53, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  background-position: -1px -1px;
+}
+
+/* ── Buttons ── */
+@layer utilities {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-3 bg-accent text-bg
+           font-mono text-[11px] font-medium uppercase tracking-widest
+           transition-all duration-200
+           hover:-translate-y-0.5 hover:opacity-90
+           active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-3 border border-muted text-text
+           font-mono text-[11px] font-medium uppercase tracking-widest
+           transition-all duration-200
+           hover:border-accent hover:text-accent hover:-translate-y-0.5
+           active:translate-y-0;
+  }
+}
+
+/* ── Marquee: pause on hover ── */
+.marquee-outer:hover .marquee-inner {
+  animation-play-state: paused;
+}
