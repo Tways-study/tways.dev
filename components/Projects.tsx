@@ -18,9 +18,9 @@ export default function Projects() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="font-mono text-[10px] text-accent shrink-0">03</span>
+        <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">03</span>
         <div className="h-px flex-1 bg-border" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">Selected Work</span>
+        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">Selected Work</span>
       </motion.div>
 
       {/* Project rows */}
@@ -46,29 +46,32 @@ export default function Projects() {
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-8 pl-6 pr-2 transition-all duration-300 group-hover:pl-8 group-hover:bg-surface/40">
 
               {/* Project number */}
-              <span className="font-mono text-[10px] text-muted shrink-0 w-6">
+              <span className="font-mono text-[11px] md:text-xs text-muted shrink-0 w-6">
                 {project.num}
               </span>
 
               {/* Title + description */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
-                  <h3 className="font-display text-xl md:text-2xl font-semibold text-text group-hover:text-accent transition-colors duration-200">
+                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-text group-hover:text-accent transition-colors duration-200">
                     {project.title}
                   </h3>
+                  <span className="font-mono text-[10px] md:text-[11px] text-accent uppercase tracking-wider shrink-0">
+                    {project.role}
+                  </span>
                   {/* Tags — reveal fully on hover */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map(tag => (
                       <span
                         key={tag}
-                        className="font-mono text-[8px] text-muted border border-border px-2 py-0.5 uppercase tracking-wider"
+                        className="font-mono text-[10px] md:text-[11px] text-muted border border-border px-2 py-0.5 uppercase tracking-wider"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-                <p className="font-body text-[13px] text-muted leading-relaxed max-w-xl">
+                <p className="font-body text-sm md:text-base text-muted leading-relaxed max-w-xl">
                   {project.desc}
                 </p>
               </div>
@@ -78,7 +81,7 @@ export default function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 self-start md:self-auto font-mono text-[10px] uppercase tracking-widest border border-border text-muted px-4 py-2.5 hover:border-accent hover:text-accent transition-all duration-200"
+                className="shrink-0 self-start md:self-auto font-mono text-[11px] md:text-xs uppercase tracking-widest border border-border text-muted px-4 py-2.5 hover:border-accent hover:text-accent transition-all duration-200"
                 aria-label={`View ${project.title}`}
               >
                 View ↗

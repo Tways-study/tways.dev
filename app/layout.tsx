@@ -23,9 +23,9 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Tways.dev — Creative Developer',
+  title: 'Tways Navarro — Full-Stack Developer & Designer',
   description:
-    'Portfolio of Tways Navarro — developer and designer building precise, purposeful digital products from Iloilo City, PH.',
+    'Portfolio of Tways Navarro, a full-stack developer and designer building precise, purposeful digital products from Iloilo City, PH.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -27,17 +27,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 lg:px-20 py-4 md:py-6 transition-all duration-300 ${
-        scrolled ? 'bg-bg/90 backdrop-blur-md border-b border-border' : ''
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 lg:px-20 transition-all duration-300 ${
+        scrolled
+          ? 'bg-bg/95 backdrop-blur-md border-b border-border py-4 shadow-lg shadow-black/10'
+          : 'bg-bg/60 backdrop-blur-sm border-b border-border/30 py-5'
       }`}
       aria-label="Primary navigation"
     >
       {/* Logo */}
       <a
         href="#home"
-        className="font-display font-bold text-xs md:text-sm tracking-widest text-text hover:text-accent transition-colors duration-200"
+        className="font-display font-bold text-sm md:text-base tracking-widest text-text hover:text-accent transition-colors duration-200"
       >
-        TWAYS<span className="text-accent">.dev</span>
+        TWICE<span className="text-accent">CODED</span>
       </a>
 
       {/* Nav links */}
@@ -46,7 +48,7 @@ export default function Navbar() {
           <a
             key={item.href}
             href={item.href}
-            className={`font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] transition-colors duration-200 ${
+            className={`font-mono text-[11px] md:text-xs uppercase tracking-[0.18em] transition-colors duration-200 ${
               active === item.href.slice(1)
                 ? 'text-accent'
                 : 'text-muted hover:text-text'
@@ -60,7 +62,7 @@ export default function Navbar() {
       {/* Hire Me — CTA (hidden on mobile, shown on desktop) */}
       <a
         href="mailto:twicenavarro23@gmail.com"
-        className="hidden md:inline-block font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 transition-all duration-200 px-4 py-2 rounded-sm"
+        className="hidden md:inline-block font-mono text-[11px] md:text-xs uppercase tracking-[0.2em] text-accent border border-accent/30 hover:border-accent hover:bg-accent/10 transition-all duration-200 px-4 py-2 rounded-sm"
       >
         Hire Me
       </a>

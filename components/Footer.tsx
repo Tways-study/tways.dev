@@ -6,18 +6,18 @@ export default function Footer() {
 
         <a
           href="#home"
-          className="font-display font-bold text-[12px] tracking-widest text-text hover:text-accent transition-colors duration-200"
+          className="font-display font-bold text-sm md:text-base tracking-widest text-text hover:text-accent transition-colors duration-200"
         >
-          TWAYS<span className="text-accent">.dev</span>
+          TWICE<span className="text-accent">CODED</span>
         </a>
 
-        <span className="font-mono text-[9px] text-muted uppercase tracking-widest">
+        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest">
           © 2026 — Designed &amp; Built by Tways Navarro
         </span>
 
         <a
           href="#home"
-          className="font-mono text-[9px] text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200"
+          className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200"
         >
           Back to top ↑
         </a>

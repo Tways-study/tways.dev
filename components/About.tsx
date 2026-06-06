@@ -29,13 +29,13 @@ export default function About() {
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
       >
-        <span className="font-mono text-[10px] text-accent shrink-0">01</span>
+        <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">01</span>
         <div className="h-px flex-1 bg-border" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">About</span>
+        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">About</span>
       </motion.div>
 
       {/* ── Two-column grid ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
 
         {/* Text column */}
         <motion.div
@@ -43,18 +43,19 @@ export default function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
+          className="mx-auto lg:ml-0"
         >
           <h2 className="font-display text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-text leading-[1.0] mb-8">
             Tways<br />Navarro
           </h2>
 
-          <p className="font-body text-muted text-sm md:text-base leading-relaxed mb-4 max-w-sm">
+          <p className="font-body text-muted text-lg md:text-xl leading-relaxed mb-4 max-w-xl">
             I&rsquo;m a web developer and designer from Iloilo City who obsesses over the intersection
-            of engineering and aesthetics. I build interfaces that don&rsquo;t just work — they feel
+            of engineering and aesthetics. I build interfaces that don&rsquo;t just work. They feel
             inevitable.
           </p>
 
-          <p className="font-body text-muted text-sm md:text-base leading-relaxed mb-10 max-w-sm">
+          <p className="font-body text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
             My work spans mobile apps, full-stack platforms, and interactive UIs. I approach every
             project with design intent and technical rigor, because craft matters.
           </p>
@@ -64,7 +65,7 @@ export default function About() {
             {TAGS.map(tag => (
               <span
                 key={tag}
-                className="font-mono text-[10px] border border-border text-muted px-3 py-1.5 uppercase tracking-widest hover:border-accent/50 hover:text-text transition-all duration-200"
+                className="font-mono text-xs md:text-sm border border-border text-muted px-3 py-1.5 uppercase tracking-widest hover:border-accent/50 hover:text-text transition-all duration-200"
               >
                 {tag}
               </span>
@@ -74,20 +75,20 @@ export default function About() {
 
         {/* Photo column */}
         <motion.div
-          className="relative"
+          className="relative w-full"
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
           transition={{ delay: 0.15 }}
         >
-          <div className="relative w-full max-w-xs mx-auto lg:mx-0 group">
+          <div className="relative w-full max-w-sm mx-auto group">
             {/* Top-left inset border */}
             <div className="absolute -top-3 -left-3 w-full h-full border border-border" aria-hidden />
 
             {/* Solid accent block — bottom right, shifts on hover */}
             <div
-              className="absolute -bottom-[18px] -right-[18px] w-[72px] h-[72px] bg-accent z-[1] transition-transform duration-500 group-hover:translate-x-[5px] group-hover:translate-y-[5px]"
+              className="absolute -bottom-[20px] -right-[20px] w-[80px] h-[80px] bg-accent z-[1] transition-transform duration-500 group-hover:translate-x-[5px] group-hover:translate-y-[5px]"
               aria-hidden
             />
 
@@ -96,8 +97,8 @@ export default function About() {
               <Image
                 src="/profile-pic.jpg"
                 alt="Tways Navarro"
-                width={360}
-                height={450}
+                width={400}
+                height={500}
                 className="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 priority
               />

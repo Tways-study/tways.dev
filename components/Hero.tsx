@@ -60,7 +60,7 @@ export default function Hero() {
       >
         <span className="h-px w-8 bg-muted" />
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em]">
+        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em]">
           Available for work
         </span>
       </motion.div>
@@ -71,7 +71,7 @@ export default function Hero() {
         style={{ fontSize: 'clamp(3.5rem, 10.5vw, 10.5rem)' }}
       >
         <div className="block text-text">
-          <SplitReveal text="Creative" baseDelay={0} />
+          <SplitReveal text="Full-Stack" baseDelay={0} />
         </div>
         <div className="block text-accent">
           <SplitReveal text="Developer" baseDelay={0.22} />
@@ -86,7 +86,7 @@ export default function Hero() {
 
         {/* Description */}
         <motion.p
-          className="font-body text-muted text-sm leading-relaxed max-w-[200px]"
+          className="font-body text-muted text-sm md:text-base leading-relaxed max-w-[240px]"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9, ease: 'easeOut' }}
@@ -107,7 +107,7 @@ export default function Hero() {
               <span className="font-display text-3xl md:text-4xl font-bold text-text leading-none">
                 {num}
               </span>
-              <span className="font-mono text-[9px] text-muted uppercase tracking-widest whitespace-pre-line leading-snug mt-1">
+              <span className="font-mono text-[10px] md:text-[11px] text-muted uppercase tracking-widest whitespace-pre-line leading-snug mt-1">
                 {label}
               </span>
             </div>
@@ -134,7 +134,7 @@ export default function Hero() {
         transition={{ delay: 1.4 }}
         aria-hidden
       >
-        <span className="font-mono text-[8px] text-muted uppercase tracking-[0.3em] [writing-mode:vertical-rl]">
+        <span className="font-mono text-[9px] md:text-[10px] text-muted uppercase tracking-[0.3em] [writing-mode:vertical-rl]">
           Scroll
         </span>
         <div className="w-px h-10 bg-border overflow-hidden">

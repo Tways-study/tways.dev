@@ -30,7 +30,7 @@ function Field({
           required={required}
           rows={4}
           placeholder=" "
-          className="peer w-full bg-transparent border-b border-border text-text font-body text-sm py-2 outline-none placeholder-transparent resize-none focus:border-accent transition-colors duration-200"
+          className="peer w-full bg-transparent border-b border-border text-text font-body text-base py-2 outline-none placeholder-transparent resize-none focus:border-accent transition-colors duration-200"
         />
       ) : (
         <input
@@ -39,15 +39,15 @@ function Field({
           type={type}
           required={required}
           placeholder=" "
-          className="peer w-full bg-transparent border-b border-border text-text font-body text-sm py-2 outline-none placeholder-transparent focus:border-accent transition-colors duration-200"
+          className="peer w-full bg-transparent border-b border-border text-text font-body text-base py-2 outline-none placeholder-transparent focus:border-accent transition-colors duration-200"
         />
       )}
       {/* Label floats up when field has value or focus */}
       <label
         htmlFor={id}
-        className="absolute left-0 top-2 font-mono text-[10px] text-muted uppercase tracking-widest transition-all duration-200
-                   peer-focus:-top-4 peer-focus:text-[8px] peer-focus:text-accent
-                   peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[8px]"
+        className="absolute left-0 top-2 font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest transition-all duration-200
+                   peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-accent md:peer-focus:text-[10px]
+                   peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[9px] md:peer-[:not(:placeholder-shown)]:text-[10px]"
       >
         {label}
       </label>
@@ -76,9 +76,9 @@ export default function Contact() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="font-mono text-[10px] text-accent shrink-0">04</span>
+        <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">04</span>
         <div className="h-px flex-1 bg-border" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">Contact</span>
+        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">Contact</span>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
@@ -95,7 +95,7 @@ export default function Contact() {
             <span className="text-accent">real.</span>
           </h2>
 
-          <p className="font-body text-muted text-sm md:text-base leading-relaxed mb-10 max-w-sm">
+          <p className="font-body text-muted text-base md:text-lg leading-relaxed mb-10 max-w-md">
             Open for freelance, internships, and full-time roles. If you have an interesting problem,
             I want to hear it.
           </p>
@@ -107,7 +107,7 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group inline-flex items-center gap-3 font-mono text-[10px] text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200"
+                className="group inline-flex items-center gap-3 font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200"
               >
                 <span className="text-accent group-hover:translate-x-1 transition-transform duration-200">
                   {symbol}
@@ -133,7 +133,7 @@ export default function Contact() {
               <p className="font-body text-muted text-sm">I&rsquo;ll get back to you shortly.</p>
               <button
                 onClick={() => setStatus('idle')}
-                className="font-mono text-[10px] text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 mt-4"
+                className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 mt-4"
               >
                 Send another →
               </button>

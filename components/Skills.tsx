@@ -26,9 +26,9 @@ export default function Skills() {
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <span className="font-mono text-[10px] text-accent shrink-0">02</span>
+          <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">02</span>
           <div className="h-px flex-1 bg-border" />
-          <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">Toolset</span>
+          <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">Toolset</span>
         </motion.div>
       </div>
 
@@ -48,7 +48,7 @@ export default function Skills() {
           {SKILLS.map(group => (
             <div key={group.group} className="flex flex-col gap-4">
               {/* Group label */}
-              <span className="font-mono text-[9px] uppercase tracking-[0.26em] text-muted border-b border-border pb-2">
+              <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.26em] text-muted border-b border-border pb-2">
                 {group.group}
               </span>
 
@@ -57,7 +57,7 @@ export default function Skills() {
                 {group.items.map((item, i) => (
                   <span
                     key={item}
-                    className={`font-mono text-[10px] px-3 py-2 border transition-colors duration-200 ${
+                    className={`font-mono text-[11px] md:text-xs px-3 py-2 border transition-colors duration-200 ${
                       group.active[i]
                         ? 'border-accent/25 text-text bg-accent/5 hover:bg-accent/10 hover:border-accent/50'
                         : 'border-border text-muted opacity-35'
