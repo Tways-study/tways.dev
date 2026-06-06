@@ -26,9 +26,9 @@ export default function Skills() {
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <span className="font-mono text-[10px] text-muted">02</span>
-          <div className="h-px w-10 bg-border" />
-          <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em]">Toolset</span>
+          <span className="font-mono text-[10px] text-accent shrink-0">02</span>
+          <div className="h-px flex-1 bg-border" />
+          <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">Toolset</span>
         </motion.div>
       </div>
 

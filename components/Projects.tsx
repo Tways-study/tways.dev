@@ -18,9 +18,9 @@ export default function Projects() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="font-mono text-[10px] text-muted">03</span>
-        <div className="h-px w-10 bg-border" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em]">Selected Work</span>
+        <span className="font-mono text-[10px] text-accent shrink-0">03</span>
+        <div className="h-px flex-1 bg-border" />
+        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">Selected Work</span>
       </motion.div>
 
       {/* Project rows */}

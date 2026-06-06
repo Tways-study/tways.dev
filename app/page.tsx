@@ -7,8 +7,7 @@ import Footer   from '@/components/Footer'
 
 export default function Page() {
   return (
-    /* md:pl-16 offsets the 64px fixed left sidebar on desktop */
-    <main className="md:pl-16">
+    <main>
       <Hero />
       <About />
       <Skills />

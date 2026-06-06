@@ -76,9 +76,9 @@ export default function Contact() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="font-mono text-[10px] text-muted">04</span>
-        <div className="h-px w-10 bg-border" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em]">Contact</span>
+        <span className="font-mono text-[10px] text-accent shrink-0">04</span>
+        <div className="h-px flex-1 bg-border" />
+        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">Contact</span>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">

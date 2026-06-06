@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center pt-20 md:pt-0 pb-16 px-8 md:px-16 lg:px-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 px-8 md:px-16 lg:px-20 overflow-hidden"
     >
       {/* Dot-grid atmosphere */}
       <div className="grid-bg absolute inset-0 pointer-events-none" aria-hidden />
@@ -47,7 +47,7 @@ export default function Hero() {
       {/* Radial accent glow — top-right */}
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(255,107,53,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(26,76,57,0.06) 0%, transparent 70%)' }}
         aria-hidden
       />
 
@@ -65,20 +65,18 @@ export default function Hero() {
         </span>
       </motion.div>
 
-      {/* ── Display headline — fills the viewport width ── */}
-      <h1 className="font-display font-extrabold leading-[0.88] -ml-0.5 mb-12 md:mb-16">
-        {/* Line 1: "Creative" */}
-        <div className="block text-[17vw] md:text-[14vw] lg:text-[13vw] text-text">
+      {/* ── Display headline ── */}
+      <h1
+        className="font-display font-bold leading-[0.92] tracking-[-0.035em] -ml-0.5 mb-12 md:mb-16"
+        style={{ fontSize: 'clamp(3.5rem, 10.5vw, 10.5rem)' }}
+      >
+        <div className="block text-text">
           <SplitReveal text="Creative" baseDelay={0} />
         </div>
-
-        {/* Line 2: "Developer" — orange accent */}
-        <div className="block text-[17vw] md:text-[14vw] lg:text-[13vw] text-accent">
+        <div className="block text-accent">
           <SplitReveal text="Developer" baseDelay={0.22} />
         </div>
-
-        {/* Line 3: "& Designer" — smaller, text color */}
-        <div className="block text-[9.5vw] md:text-[7.5vw] lg:text-[7vw] text-text">
+        <div className="block text-muted">
           <SplitReveal text="& Designer" baseDelay={0.5} />
         </div>
       </h1>

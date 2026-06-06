@@ -19,19 +19,19 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-28 md:py-36 px-8 md:px-16 lg:px-24 border-t border-border"
+      className="py-28 md:py-36 px-8 md:px-16 lg:px-24 bg-surface border-t border-border"
     >
       {/* ── Section header ── */}
       <motion.div
-        className="flex items-center gap-4 mb-16 md:mb-20"
+        className="flex items-center gap-5 mb-16 md:mb-20"
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
       >
-        <span className="font-mono text-[10px] text-muted">01</span>
-        <div className="h-px w-10 bg-border" />
-        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em]">About</span>
+        <span className="font-mono text-[10px] text-accent shrink-0">01</span>
+        <div className="h-px flex-1 bg-border" />
+        <span className="font-mono text-[10px] text-muted uppercase tracking-[0.22em] shrink-0">About</span>
       </motion.div>
 
       {/* ── Two-column grid ── */}
@@ -81,23 +81,26 @@ export default function About() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ delay: 0.15 }}
         >
-          <div className="relative w-full max-w-xs mx-auto lg:mx-0">
-            {/* Layered decorative frames */}
+          <div className="relative w-full max-w-xs mx-auto lg:mx-0 group">
+            {/* Top-left inset border */}
             <div className="absolute -top-3 -left-3 w-full h-full border border-border" aria-hidden />
-            <div className="absolute -bottom-3 -right-3 w-full h-full bg-accent/8 border border-accent/20" aria-hidden />
+
+            {/* Solid accent block — bottom right, shifts on hover */}
+            <div
+              className="absolute -bottom-[18px] -right-[18px] w-[72px] h-[72px] bg-accent z-[1] transition-transform duration-500 group-hover:translate-x-[5px] group-hover:translate-y-[5px]"
+              aria-hidden
+            />
 
             {/* Photo: greyscale → colour on hover */}
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden z-[2]">
               <Image
                 src="/profile-pic.jpg"
                 alt="Tways Navarro"
                 width={360}
                 height={450}
-                className="w-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 priority
               />
-              {/* Subtle orange tint overlay on hover */}
-              <div className="absolute inset-0 bg-accent/0 hover:bg-accent/5 transition-all duration-500 pointer-events-none" />
             </div>
           </div>
         </motion.div>

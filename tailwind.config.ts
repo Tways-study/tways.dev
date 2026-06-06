@@ -12,7 +12,7 @@ const config: Config = {
         bg:          '#0a0a0a',
         surface:     '#141414',
         'surface-2': '#1c1c1c',
-        accent:      '#ff6b35',
+        accent:      '#1A4C39',
         text:        '#f0ede8',
         muted:       '#525252',
         border:      '#1f1f1f',
