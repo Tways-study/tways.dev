@@ -57,6 +57,8 @@ export type Project = {
   desc:  string
   tags:  string[]
   link:  string
+  year:  string
+  image: string
 }
 
 export const PROJECTS: Project[] = [
@@ -67,6 +69,8 @@ export const PROJECTS: Project[] = [
     desc:  'A mobile learning app for Filipino children built with OCR scanning, Gemini AI word analysis, and gamified vocabulary building. Shipped to Android via Capacitor.',
     tags:  ['React', 'Capacitor', 'Gemini AI'],
     link:  'https://github.com/Tways-study',
+    year:  '2025',
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80&auto=format&fit=crop',
   },
   {
     num:   '02',
@@ -75,6 +79,8 @@ export const PROJECTS: Project[] = [
     desc:  'Attendance System for the Pharmacy Department in USA, Iloilo City',
     tags:  ['React', 'Supabase', 'TypeScript'],
     link:  'https://github.com/Tways-study',
+    year:  '2025',
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80&auto=format&fit=crop',
   },
   {
     num:   '03',
@@ -83,6 +89,8 @@ export const PROJECTS: Project[] = [
     desc:  'A university library lending platform with admin and student portals, real-time inventory tracking, and Supabase-powered authentication and database.',
     tags:  ['HTML/CSS/JS', 'Supabase', 'Auth'],
     link:  '#',
+    year:  '2024',
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&auto=format&fit=crop',
   },
   {
     num:   '04',
@@ -91,6 +99,8 @@ export const PROJECTS: Project[] = [
     desc:  'A student productivity tool built around OOP principles for managing study sessions, deadlines, and academic goals with a clean local-first architecture.',
     tags:  ['JavaScript', 'OOP', 'LocalStorage'],
     link:  '#',
+    year:  '2024',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80&auto=format&fit=crop',
   },
   {
     num:   '05',
@@ -99,6 +109,8 @@ export const PROJECTS: Project[] = [
     desc:  'An interactive mood-based web experience with dynamic theme shifting and ambient controls, built purely in vanilla JS with zero dependencies.',
     tags:  ['HTML/CSS', 'JavaScript', 'Vanilla'],
     link:  '#',
+    year:  '2024',
+    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80&auto=format&fit=crop',
   },
   {
     num:   '06',
@@ -107,5 +119,7 @@ export const PROJECTS: Project[] = [
     desc:  'A lightweight syllabus tracker for students to log course outlines, track coverage progress, and get visual completion feedback across subjects.',
     tags:  ['JavaScript', 'CRUD', 'LocalStorage'],
     link:  '#',
+    year:  '2023',
+    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80&auto=format&fit=crop',
   },
 ]
