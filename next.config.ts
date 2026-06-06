@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,    // Required for static export
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/tways.dev' : '',
+  },
   ...(isProd ? { basePath: '/tways.dev' } : {}),
 }
 

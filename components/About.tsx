@@ -95,7 +95,7 @@ export default function About() {
             {/* Photo: greyscale → colour on hover */}
             <div className="relative overflow-hidden z-[2]">
               <Image
-                src="/profile-pic.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/profile-pic.jpg`}
                 alt="Tways Navarro"
                 width={400}
                 height={500}
