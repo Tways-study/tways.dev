@@ -38,7 +38,7 @@ export default function Marquee() {
   const doubled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS]
 
   return (
-    <div className="relative overflow-hidden py-7 border-y border-border marquee-outer">
+    <div className="relative overflow-hidden py-8 border-y border-border marquee-outer">
       {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />

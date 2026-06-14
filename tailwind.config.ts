@@ -10,12 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         bg:          '#0a0a0a',
-        surface:     '#141414',
-        'surface-2': '#1c1c1c',
-        accent:      '#1A4C39',
+        surface:     '#111111',
+        'surface-2': '#1a1a1a',
+        accent:      '#10b981',
         text:        '#f0ede8',
-        muted:       '#525252',
-        border:      '#1f1f1f',
+        muted:       '#a3a3a3',
+        border:      '#242424',
       },
       fontFamily: {
         display: ['var(--font-syne)',       'sans-serif'],

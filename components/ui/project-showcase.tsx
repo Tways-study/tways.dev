@@ -108,6 +108,7 @@ export function ProjectShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+            style={{ cursor: 'pointer' }}
           >
             <div className="relative py-6 border-t border-border">
               {/* Hover surface highlight */}

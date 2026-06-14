@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { HERO_STATS } from '@/lib/data'
 
-// Character-staggered reveal — each letter slides up from a clip
 function SplitReveal({
   text,
   baseDelay = 0,
@@ -28,7 +27,7 @@ function SplitReveal({
             ease: [0.16, 1, 0.3, 1],
           }}
         >
-          {char === ' ' ? '\u00A0' : char}
+          {char === ' ' ? ' ' : char}
         </motion.span>
       ))}
     </span>
@@ -44,10 +43,15 @@ export default function Hero() {
       {/* Dot-grid atmosphere */}
       <div className="grid-bg absolute inset-0 pointer-events-none" aria-hidden />
 
-      {/* Radial accent glow — top-right */}
+      {/* Radial accent glow */}
       <div
-        className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(26,76,57,0.06) 0%, transparent 70%)' }}
+        className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 65%)' }}
+        aria-hidden
+      />
+      <div
+        className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 70%)' }}
         aria-hidden
       />
 
@@ -58,16 +62,16 @@ export default function Hero() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <span className="h-px w-8 bg-muted" />
+        <span className="h-px w-8 bg-border" />
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
         <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em]">
           Available for work
         </span>
       </motion.div>
 
-      {/* ── Display headline ── */}
+      {/* Display headline */}
       <h1
-        className="font-display font-bold leading-[0.92] tracking-[-0.035em] -ml-0.5 mb-12 md:mb-16"
+        className="font-display font-bold leading-[0.9] tracking-[-0.035em] -ml-0.5 mb-10 md:mb-14"
         style={{ fontSize: 'clamp(3.5rem, 10.5vw, 10.5rem)' }}
       >
         <div className="block text-text">
@@ -76,17 +80,26 @@ export default function Hero() {
         <div className="block text-accent">
           <SplitReveal text="Developer" baseDelay={0.22} />
         </div>
-        <div className="block text-muted">
+        <div className="block text-outlined">
           <SplitReveal text="& Designer" baseDelay={0.5} />
         </div>
       </h1>
 
-      {/* ── Bottom info row ── */}
+      {/* Thin divider */}
+      <motion.div
+        className="h-px w-full bg-border mb-10 md:mb-12"
+        initial={{ scaleX: 0, originX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        aria-hidden
+      />
+
+      {/* Bottom info row */}
       <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-12">
 
         {/* Description */}
         <motion.p
-          className="font-body text-muted text-sm md:text-base leading-relaxed max-w-[240px]"
+          className="font-body text-muted text-sm md:text-base leading-relaxed max-w-[260px]"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9, ease: 'easeOut' }}
@@ -97,13 +110,13 @@ export default function Hero() {
 
         {/* Stats */}
         <motion.div
-          className="flex gap-8 md:gap-10"
+          className="flex gap-10 md:gap-12"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0, ease: 'easeOut' }}
         >
           {HERO_STATS.map(({ num, label }) => (
-            <div key={label} className="flex flex-col gap-0.5">
+            <div key={label} className="flex flex-col gap-1">
               <span className="font-display text-3xl md:text-4xl font-bold text-text leading-none">
                 {num}
               </span>
@@ -122,7 +135,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.1, ease: 'easeOut' }}
         >
           <a href="#projects" className="btn-primary">View Work ↓</a>
-          <a href="#contact"  className="btn-ghost">Get in Touch</a>
+          <a href="#contact" className="btn-ghost">Get in Touch</a>
         </motion.div>
       </div>
 
@@ -134,7 +147,7 @@ export default function Hero() {
         transition={{ delay: 1.4 }}
         aria-hidden
       >
-        <span className="font-mono text-[9px] md:text-[10px] text-muted uppercase tracking-[0.3em] [writing-mode:vertical-rl]">
+        <span className="font-mono text-[9px] text-muted uppercase tracking-[0.3em] [writing-mode:vertical-rl]">
           Scroll
         </span>
         <div className="w-px h-10 bg-border overflow-hidden">

@@ -13,6 +13,8 @@ const fadeUp = {
   },
 }
 
+const GROUP_NUMS = ['01', '02', '03', '04']
+
 export default function Skills() {
   return (
     <section id="skills" className="py-28 md:py-36 border-t border-border">
@@ -35,41 +37,53 @@ export default function Skills() {
       {/* Infinite marquee strip */}
       <Marquee />
 
-      {/* Skill groups grid */}
-      <div className="px-8 md:px-16 lg:px-24 mt-14">
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ delay: 0.1 }}
-        >
-          {SKILLS.map(group => (
-            <div key={group.group} className="flex flex-col gap-4">
-              {/* Group label */}
-              <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.26em] text-muted border-b border-border pb-2">
-                {group.group}
-              </span>
+      {/* Skill groups */}
+      <div className="px-8 md:px-16 lg:px-24 mt-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          {SKILLS.map((group, gi) => (
+            <motion.div
+              key={group.group}
+              className="bg-bg p-6 md:p-8"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ delay: gi * 0.07 }}
+            >
+              {/* Group number + name */}
+              <div className="flex items-baseline justify-between mb-6">
+                <span className="font-mono text-[10px] uppercase tracking-[0.26em] text-muted">
+                  {group.group}
+                </span>
+                <span className="font-display text-4xl font-bold text-border select-none">
+                  {GROUP_NUMS[gi]}
+                </span>
+              </div>
 
-              {/* Skill pills */}
-              <div className="flex flex-col gap-2">
+              {/* Skill items */}
+              <div className="flex flex-col gap-2.5">
                 {group.items.map((item, i) => (
-                  <span
+                  <div
                     key={item}
-                    className={`font-mono text-[11px] md:text-xs px-3 py-2 border transition-colors duration-200 ${
-                      group.active[i]
-                        ? 'border-accent/25 text-text bg-accent/5 hover:bg-accent/10 hover:border-accent/50'
-                        : 'border-border text-muted opacity-35'
+                    className={`flex items-center gap-2.5 group transition-colors duration-200 ${
+                      group.active[i] ? 'cursor-default' : 'opacity-30 cursor-not-allowed'
                     }`}
                   >
-                    {item}
-                  </span>
+                    {/* Dot indicator */}
+                    <span className={`w-1 h-1 rounded-full shrink-0 transition-colors duration-200 ${
+                      group.active[i] ? 'bg-accent group-hover:bg-accent' : 'bg-muted/30'
+                    }`} />
+                    <span className={`font-mono text-[11px] md:text-xs uppercase tracking-wider transition-colors duration-200 ${
+                      group.active[i] ? 'text-text group-hover:text-accent' : 'text-muted/40'
+                    }`}>
+                      {item}
+                    </span>
+                  </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
     </section>
