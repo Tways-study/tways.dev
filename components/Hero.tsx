@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HERO_STATS } from '@/lib/data'
 
 function SplitReveal({
   text,
@@ -38,22 +37,20 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 px-8 md:px-16 lg:px-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 px-8 md:px-16 lg:px-20"
     >
-      {/* Dot-grid atmosphere */}
-      <div className="grid-bg absolute inset-0 pointer-events-none" aria-hidden />
-
-      {/* Radial accent glow */}
-      <div
-        className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 65%)' }}
-        aria-hidden
-      />
-      <div
-        className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 70%)' }}
-        aria-hidden
-      />
+      {/* Background layer — overflow-hidden isolated here so the heading stroke isn't clipped */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        <div className="grid-bg absolute inset-0" />
+        <div
+          className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 65%)' }}
+        />
+        <div
+          className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 70%)' }}
+        />
+      </div>
 
       {/* Available badge */}
       <motion.div
@@ -64,7 +61,7 @@ export default function Hero() {
       >
         <span className="h-px w-8 bg-border" />
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em]">
+        <span className="font-body text-[11px] md:text-xs text-muted uppercase tracking-[0.22em]">
           Available for work
         </span>
       </motion.div>
@@ -80,7 +77,7 @@ export default function Hero() {
         <div className="block text-accent">
           <SplitReveal text="Developer" baseDelay={0.22} />
         </div>
-        <div className="block text-outlined">
+        <div className="block text-outlined pb-1">
           <SplitReveal text="& Designer" baseDelay={0.5} />
         </div>
       </h1>
@@ -107,25 +104,6 @@ export default function Hero() {
           Building precise, purposeful<br />digital experiences. Based in{' '}
           <strong className="text-text font-medium">Iloilo City, PH</strong>.
         </motion.p>
-
-        {/* Stats */}
-        <motion.div
-          className="flex gap-10 md:gap-12"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0, ease: 'easeOut' }}
-        >
-          {HERO_STATS.map(({ num, label }) => (
-            <div key={label} className="flex flex-col gap-1">
-              <span className="font-display text-3xl md:text-4xl font-bold text-text leading-none">
-                {num}
-              </span>
-              <span className="font-mono text-[10px] md:text-[11px] text-muted uppercase tracking-widest whitespace-pre-line leading-snug mt-1">
-                {label}
-              </span>
-            </div>
-          ))}
-        </motion.div>
 
         {/* CTAs */}
         <motion.div

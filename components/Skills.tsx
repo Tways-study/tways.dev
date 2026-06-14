@@ -19,21 +19,6 @@ export default function Skills() {
   return (
     <section id="skills" className="py-28 md:py-36 border-t border-border">
 
-      {/* Section header */}
-      <div className="px-8 md:px-16 lg:px-24">
-        <motion.div
-          className="flex items-center gap-4 mb-16"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-        >
-          <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">02</span>
-          <div className="h-px flex-1 bg-border" />
-          <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">Toolset</span>
-        </motion.div>
-      </div>
-
       {/* Infinite marquee strip */}
       <Marquee />
 
@@ -52,7 +37,7 @@ export default function Skills() {
             >
               {/* Group number + name */}
               <div className="flex items-baseline justify-between mb-6">
-                <span className="font-mono text-[10px] uppercase tracking-[0.26em] text-muted">
+                <span className="font-body text-[10px] uppercase tracking-[0.26em] text-muted">
                   {group.group}
                 </span>
                 <span className="font-display text-4xl font-bold text-border select-none">
@@ -73,7 +58,7 @@ export default function Skills() {
                     <span className={`w-1 h-1 rounded-full shrink-0 transition-colors duration-200 ${
                       group.active[i] ? 'bg-accent group-hover:bg-accent' : 'bg-muted/30'
                     }`} />
-                    <span className={`font-mono text-[11px] md:text-xs uppercase tracking-wider transition-colors duration-200 ${
+                    <span className={`font-body text-[11px] md:text-xs uppercase tracking-wider transition-colors duration-200 ${
                       group.active[i] ? 'text-text group-hover:text-accent' : 'text-muted/40'
                     }`}>
                       {item}

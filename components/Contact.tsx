@@ -64,7 +64,7 @@ function Field({
       )}
       <label
         htmlFor={id}
-        className="absolute left-0 top-2 font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest transition-all duration-200
+        className="absolute left-0 top-2 font-body text-[11px] md:text-xs text-muted uppercase tracking-widest transition-all duration-200
                    peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-accent md:peer-focus:text-[10px]
                    peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[9px] md:peer-[:not(:placeholder-shown)]:text-[10px]"
       >
@@ -110,19 +110,6 @@ export default function Contact() {
   return (
     <section id="contact" className="py-28 md:py-36 px-8 md:px-16 lg:px-24 border-t border-border">
 
-      {/* Section header */}
-      <motion.div
-        className="flex items-center gap-4 mb-20"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">04</span>
-        <div className="h-px flex-1 bg-border" />
-        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">Contact</span>
-      </motion.div>
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28">
 
         {/* Left — headline + socials */}
@@ -152,7 +139,7 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group inline-flex items-center gap-3 font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 cursor-pointer w-fit"
+                className="group inline-flex items-center gap-3 font-body text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 cursor-pointer w-fit"
               >
                 <Icon className="w-4 h-4 text-accent" />
                 {label}
@@ -186,7 +173,7 @@ export default function Contact() {
               <p className="font-body text-muted text-sm">I&rsquo;ll get back to you shortly.</p>
               <button
                 onClick={() => setStatus('idle')}
-                className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 mt-4 cursor-pointer"
+                className="font-body text-[11px] md:text-xs text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 mt-4 cursor-pointer"
               >
                 Send another →
               </button>

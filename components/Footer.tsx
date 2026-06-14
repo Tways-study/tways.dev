@@ -26,13 +26,13 @@ export default function Footer() {
           TWICE<span className="text-accent">CODED</span>
         </a>
 
-        <span className="font-mono text-[10px] md:text-[11px] text-muted uppercase tracking-widest">
+        <span className="font-body text-[10px] md:text-[11px] text-muted uppercase tracking-widest">
           © 2026 — Designed &amp; Built by Tways Navarro
         </span>
 
         <a
           href="#home"
-          className="font-mono text-[10px] md:text-[11px] text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 cursor-pointer"
+          className="font-body text-[10px] md:text-[11px] text-muted uppercase tracking-widest hover:text-accent transition-colors duration-200 cursor-pointer"
         >
           Back to top ↑
         </a>

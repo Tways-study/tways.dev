@@ -47,21 +47,6 @@ export function ProjectShowcase() {
       onMouseMove={handleMouseMove}
       className="relative py-28 md:py-36 px-8 md:px-16 lg:px-24 border-t border-border"
     >
-      {/* Section header */}
-      <motion.div
-        className="flex items-center gap-4 mb-16"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">03</span>
-        <div className="h-px flex-1 bg-border" />
-        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">
-          Selected Work
-        </span>
-      </motion.div>
-
       {/* Floating image preview — follows cursor */}
       <div
         className="pointer-events-none fixed z-50 overflow-hidden rounded-xl"
@@ -95,20 +80,22 @@ export function ProjectShowcase() {
 
       {/* Project rows */}
       <div>
-        {PROJECTS.map((project, i) => (
+        {PROJECTS.map((project, i) => {
+          const isLinked = project.link !== '#'
+          return (
           <motion.a
             key={project.num}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block"
+            href={isLinked ? project.link : undefined}
+            target={isLinked ? '_blank' : undefined}
+            rel={isLinked ? 'noopener noreferrer' : undefined}
+            className={`group block ${!isLinked ? 'cursor-default' : ''}`}
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={handleMouseLeave}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: isLinked ? 'pointer' : 'default' }}
           >
             <div className="relative py-6 border-t border-border">
               {/* Hover surface highlight */}
@@ -121,7 +108,7 @@ export function ProjectShowcase() {
               <div className="relative flex items-start justify-between gap-6">
                 {/* Number + content */}
                 <div className="flex items-start gap-6 flex-1 min-w-0">
-                  <span className="font-mono text-[11px] md:text-xs text-muted shrink-0 mt-1 w-6">
+                  <span className="font-body text-[11px] md:text-xs text-muted shrink-0 mt-1 w-6">
                     {project.num}
                   </span>
 
@@ -138,17 +125,23 @@ export function ProjectShowcase() {
                           />
                         </span>
                       </h3>
-                      <ArrowUpRight
-                        className={`w-4 h-4 text-accent transition-all duration-300 ease-out ${
-                          hoveredIndex === i
-                            ? 'opacity-100 translate-x-0 translate-y-0'
-                            : 'opacity-0 -translate-x-2 translate-y-2'
-                        }`}
-                      />
+                      {isLinked ? (
+                        <ArrowUpRight
+                          className={`w-4 h-4 text-accent transition-all duration-300 ease-out ${
+                            hoveredIndex === i
+                              ? 'opacity-100 translate-x-0 translate-y-0'
+                              : 'opacity-0 -translate-x-2 translate-y-2'
+                          }`}
+                        />
+                      ) : (
+                        <span className="font-body text-[9px] text-muted border border-border px-1.5 py-0.5 uppercase tracking-widest ml-1">
+                          Private
+                        </span>
+                      )}
                     </div>
 
                     {/* Role */}
-                    <span className="font-mono text-[10px] md:text-[11px] text-accent uppercase tracking-wider block mb-2">
+                    <span className="font-body text-[10px] md:text-[11px] text-accent uppercase tracking-wider block mb-2">
                       {project.role}
                     </span>
 
@@ -177,7 +170,7 @@ export function ProjectShowcase() {
 
                 {/* Year */}
                 <span
-                  className={`font-mono text-xs text-muted tabular-nums shrink-0 transition-colors duration-300 ${
+                  className={`font-body text-xs text-muted tabular-nums shrink-0 transition-colors duration-300 ${
                     hoveredIndex === i ? 'text-text/50' : ''
                   }`}
                 >
@@ -186,7 +179,8 @@ export function ProjectShowcase() {
               </div>
             </div>
           </motion.a>
-        ))}
+          )
+        })}
 
         {/* Bottom border */}
         <div className="border-t border-border" />

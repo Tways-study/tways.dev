@@ -20,19 +20,6 @@ export default function About() {
       id="about"
       className="py-28 md:py-36 px-8 md:px-16 lg:px-24 bg-surface border-t border-border"
     >
-      {/* Section header */}
-      <motion.div
-        className="flex items-center gap-5 mb-20 md:mb-24"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-80px' }}
-      >
-        <span className="font-mono text-[11px] md:text-xs text-accent shrink-0">01</span>
-        <div className="h-px flex-1 bg-border" />
-        <span className="font-mono text-[11px] md:text-xs text-muted uppercase tracking-[0.22em] shrink-0">About</span>
-      </motion.div>
-
       {/* Two-column grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center max-w-6xl mx-auto">
 
@@ -69,7 +56,7 @@ export default function About() {
             {TAGS.map(tag => (
               <span
                 key={tag}
-                className="font-mono text-[11px] md:text-xs border border-border text-muted px-3 py-1.5 uppercase tracking-widest hover:border-accent/50 hover:text-text transition-all duration-200 cursor-default"
+                className="font-body text-[11px] md:text-xs border border-border text-muted px-3 py-1.5 uppercase tracking-widest hover:border-accent/50 hover:text-text transition-all duration-200 cursor-default"
               >
                 {tag}
               </span>

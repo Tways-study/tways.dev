@@ -83,7 +83,7 @@ textarea:-webkit-autofill:focus {
 @layer utilities {
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg
-           font-mono text-xs md:text-sm font-medium uppercase tracking-widest
+           font-body text-xs md:text-sm font-medium uppercase tracking-widest
            transition-all duration-200 cursor-pointer
            hover:-translate-y-0.5 hover:brightness-110
            active:translate-y-0;
@@ -91,7 +91,7 @@ textarea:-webkit-autofill:focus {
 
   .btn-ghost {
     @apply inline-flex items-center gap-2 px-6 py-3 border border-border text-text
-           font-mono text-xs md:text-sm font-medium uppercase tracking-widest
+           font-body text-xs md:text-sm font-medium uppercase tracking-widest
            transition-all duration-200 cursor-pointer
            hover:border-muted hover:bg-white/[0.03] hover:-translate-y-0.5
            active:translate-y-0;
@@ -101,4 +101,9 @@ textarea:-webkit-autofill:focus {
 /* ── Marquee: pause on hover ── */
 .marquee-outer:hover .marquee-inner {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner { animation: none; }
+  .animate-pulse { animation: none; }
 }
