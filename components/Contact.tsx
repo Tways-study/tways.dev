@@ -26,7 +26,7 @@ function MailIcon({ className }: { className?: string }) {
 
 const SOCIALS = [
   { label: 'GitHub',   href: 'https://github.com/Tways-study',   Icon: GithubIcon },
-  { label: 'LinkedIn', href: '#',                                 Icon: LinkedInIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/theodore-samuel-navarro-b10018415/', Icon: LinkedInIcon },
   { label: 'Email',    href: 'mailto:twicenavarro23@gmail.com',   Icon: MailIcon },
 ]
 
@@ -75,12 +75,36 @@ function Field({
 }
 
 export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('sending')
-    setTimeout(() => setStatus('sent'), 1200)
+    setErrorMsg('')
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      })
+
+      if (res.ok) {
+        setStatus('sent')
+        form.reset()
+      } else {
+        const json = await res.json().catch(() => ({}))
+        setErrorMsg(json?.errors?.[0]?.message ?? 'Something went wrong. Please try again.')
+        setStatus('error')
+      }
+    } catch {
+      setErrorMsg('Network error. Please check your connection and try again.')
+      setStatus('error')
+    }
   }
 
   return (
@@ -172,6 +196,10 @@ export default function Contact() {
               <Field id="name"    label="Name"    type="text"     required />
               <Field id="email"   label="Email"   type="email"    required />
               <Field id="message" label="Message" type="textarea" required />
+
+              {status === 'error' && (
+                <p className="font-mono text-[11px] text-red-400 -mt-6">{errorMsg}</p>
+              )}
 
               <button
                 type="submit"

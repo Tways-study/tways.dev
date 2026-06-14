@@ -53,15 +53,15 @@ export default function About() {
           </h2>
 
           <p className="font-body text-muted text-base md:text-lg leading-relaxed mb-5 max-w-xl">
-            I&rsquo;m a web developer and designer from Iloilo City who obsesses over
-            the intersection of engineering and aesthetics. I build interfaces that
-            don&rsquo;t just work — they feel inevitable.
+            I&rsquo;m a striving Full-Stack developer from Iloilo City, dedicated
+            to mastering the full development lifecycle. I strive to build intuitive
+            front-ends and robust back-ends that create seamless, complete user experiences.
           </p>
 
           <p className="font-body text-muted text-base md:text-lg leading-relaxed mb-10 max-w-xl">
-            My work spans mobile apps, full-stack platforms, and interactive UIs.
-            I approach every project with design intent and technical rigor,
-            because craft matters.
+            My learning journey covers full-stack platforms, mobile apps, and
+            interactive UIs. I approach every project with a commitment to clean
+            code and architectural rigor, because craft matters from day one.
           </p>
 
           {/* Tags */}
@@ -99,7 +99,7 @@ export default function About() {
             {/* Photo: greyscale → colour on hover */}
             <div className="relative overflow-hidden z-[2]">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/profile-pic.jpg`}
+                src="/profile-pic.jpg"
                 alt="Tways Navarro"
                 width={400}
                 height={500}
