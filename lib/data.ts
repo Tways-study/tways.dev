@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     tags:  ['JavaScript', 'Capacitor', 'Gemini AI'],
     link:  'https://github.com/Tways-study/Handog-Aral',
     year:  '2026',
-    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80&auto=format&fit=crop',
+    image: '/handog-aral.png',
   },
   {
     num:   '02',
@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
     tags:  ['React', 'Supabase', 'TypeScript'],
     link:  '#',
     year:  '2025',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80&auto=format&fit=crop',
+    image: '/pharmatrack.png',
   },
   {
     num:   '03',
