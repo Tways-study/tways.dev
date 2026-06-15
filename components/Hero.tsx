@@ -77,7 +77,7 @@ export default function Hero() {
         <div className="block text-accent">
           <SplitReveal text="Developer" baseDelay={0.22} />
         </div>
-        <div className="block text-outlined pb-1">
+        <div className="block font-semibold" style={{ color: 'rgba(240, 237, 232, 0.36)' }}>
           <SplitReveal text="& Designer" baseDelay={0.5} />
         </div>
       </h1>
