@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
+import { HERO_STATS } from '@/lib/data'
 
 function SplitReveal({
   text,
@@ -34,6 +35,8 @@ function SplitReveal({
 }
 
 export default function Hero() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <section
       id="home"
@@ -52,12 +55,22 @@ export default function Hero() {
         />
       </div>
 
+      {/* Name byline */}
+      <motion.p
+        className="font-mono text-xs md:text-sm text-muted tracking-[0.15em] mb-3 md:mb-4"
+        initial={{ opacity: 0, x: -16 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
+        Tways Navarro
+      </motion.p>
+
       {/* Available badge */}
       <motion.div
         className="flex items-center gap-3 mb-10 md:mb-14"
         initial={{ opacity: 0, x: -16 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
       >
         <span className="h-px w-8 bg-border" />
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -77,7 +90,7 @@ export default function Hero() {
         <div className="block text-accent">
           <SplitReveal text="Developer" baseDelay={0.22} />
         </div>
-        <div className="block font-semibold" style={{ color: 'rgba(240, 237, 232, 0.36)' }}>
+        <div className="block font-semibold" style={{ color: 'rgba(240, 237, 232, 0.44)' }}>
           <SplitReveal text="& Designer" baseDelay={0.5} />
         </div>
       </h1>
@@ -105,6 +118,25 @@ export default function Hero() {
           <strong className="text-text font-medium">Iloilo City, PH</strong>.
         </motion.p>
 
+        {/* Stats — desktop only */}
+        <motion.div
+          className="hidden md:flex items-center gap-6 md:gap-8"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.0, ease: 'easeOut' }}
+        >
+          <span className="h-8 w-px bg-border" aria-hidden />
+          {HERO_STATS.map((stat) => (
+            <div key={stat.num} className="flex flex-col gap-1">
+              <span className="font-display text-xl md:text-2xl font-bold text-text">{stat.num}</span>
+              <span className="font-body text-[10px] text-muted uppercase tracking-widest leading-tight whitespace-pre-line">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+          <span className="h-8 w-px bg-border" aria-hidden />
+        </motion.div>
+
         {/* CTAs */}
         <motion.div
           className="flex gap-3 md:ml-auto"
@@ -131,8 +163,12 @@ export default function Hero() {
         <div className="w-px h-10 bg-border overflow-hidden">
           <motion.div
             className="w-full bg-accent"
-            animate={{ height: ['0%', '100%', '0%'] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            animate={prefersReducedMotion ? { height: '40%' } : { height: ['0%', '100%', '0%'] }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+            }
           />
         </div>
       </motion.div>

@@ -40,15 +40,16 @@ export default function About() {
           </h2>
 
           <p className="font-body text-muted text-base md:text-lg leading-relaxed mb-5 max-w-xl">
-            I&rsquo;m a striving Full-Stack developer from Iloilo City, dedicated
-            to mastering the full development lifecycle. I strive to build intuitive
-            front-ends and robust back-ends that create seamless, complete user experiences.
+            I&rsquo;m a Full-Stack Developer based in Iloilo City, focused on the
+            complete development lifecycle from interface to architecture.
+            I build Front-Ends that feel intuitive and Back-Ends that hold up
+            under real use.
           </p>
 
           <p className="font-body text-muted text-base md:text-lg leading-relaxed mb-10 max-w-xl">
-            My learning journey covers full-stack platforms, mobile apps, and
-            interactive UIs. I approach every project with a commitment to clean
-            code and architectural rigor, because craft matters from day one.
+            My work spans full-stack platforms, mobile apps, and interactive UIs.
+            Clean code and architectural rigor aren&rsquo;t afterthoughts &mdash;
+            they&rsquo;re the baseline I build from.
           </p>
 
           {/* Tags */}
@@ -89,7 +90,7 @@ export default function About() {
                 src="/profile-pic.jpg"
                 alt="Tways Navarro"
                 width={400}
-                height={500}
+                height={533}
                 className="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 priority
               />
@@ -100,7 +101,7 @@ export default function About() {
             {/* Role label */}
             <div className="absolute -bottom-10 left-0 z-[3]">
               <span className="font-mono text-[10px] text-muted uppercase tracking-widest">
-                Full-Stack Developer & Designer
+                Based in Iloilo City, PH
               </span>
             </div>
           </div>
