@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     tags:  ['JavaScript', 'Capacitor', 'Gemini AI'],
     link:  'https://github.com/Tways-study/Handog-Aral',
     year:  '2026',
-    image: '/handog-aral.png',
+    image: '/project-screenshots/handog-aral.png',
   },
   {
     num:   '02',
@@ -90,7 +90,7 @@ export const PROJECTS: Project[] = [
     tags:  ['HTML/CSS/JS', 'Supabase', 'JavaScript'],
     link:  'https://github.com/Tways-study/UniLend',
     year:  '2026',
-    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&auto=format&fit=crop',
+    image: '/project-screenshots/unilend.png',
   },
   {
     num:   '04',
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     tags:  ['TypeScript', 'Supabase', 'Next.js'],
     link:  'https://github.com/Tways-study/BoardMate',
     year:  '2026',
-    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80&auto=format&fit=crop',
+    image: '/project-screenshots/boardmate.png',
   },
   {
     num:   '05',
@@ -110,6 +110,6 @@ export const PROJECTS: Project[] = [
     tags:  ['Next.js', 'Firebase', 'TypeScript'],
     link:  'https://github.com/Tways-study/KwartoKwarta',
     year:  '2026',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80&auto=format&fit=crop',
+    image: '/project-screenshots/kwartokwarta.png',
   },
 ]
