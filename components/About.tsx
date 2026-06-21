@@ -48,7 +48,7 @@ export default function About() {
 
           <p className="font-body text-muted text-base md:text-lg leading-relaxed mb-10 max-w-xl">
             My work spans full-stack platforms, mobile apps, and interactive UIs.
-            Clean code and architectural rigor aren&rsquo;t afterthoughts &mdash;
+            Clean code and architectural rigor aren&rsquo;t afterthoughts
             they&rsquo;re the baseline I build from.
           </p>
 

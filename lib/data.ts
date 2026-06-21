@@ -1,9 +1,10 @@
 // ── Navigation ────────────────────────────────────────────────
 export const NAV_ITEMS = [
-  { label: 'About',   href: '#about',    num: '01' },
-  { label: 'Skills',  href: '#skills',   num: '02' },
-  { label: 'Work',    href: '#projects', num: '03' },
-  { label: 'Contact', href: '#contact',  num: '04' },
+  { label: 'About',     href: '#about',     num: '01' },
+  { label: 'Education', href: '#education', num: '02' },
+  { label: 'Skills',    href: '#skills',    num: '03' },
+  { label: 'Work',      href: '#projects',  num: '04' },
+  { label: 'Contact',   href: '#contact',   num: '05' },
 ] as const
 
 // ── Hero stats ────────────────────────────────────────────────
@@ -12,6 +13,53 @@ export const HERO_STATS = [
   { num: '2+', label: 'Years\nCoding'  },
   { num: '4+', label: 'AI Tools\nIntegrated'  },
 ] as const
+
+// ── Education & certificates timeline ────────────────────────
+export type TimelineEntry = {
+  kind:    'education' | 'certificate'
+  title:   string
+  org:     string
+  start:   string
+  end:     string
+  detail?: string
+  link?:   string
+}
+
+export const TIMELINE: TimelineEntry[] = [
+  {
+    kind:   'education',
+    title:  'BS Information Technology',
+    org:    'University of San Agustin',
+    start:  '2021',
+    end:    '2025',
+    detail: 'Major in Web & Mobile Application Development',
+    link:   '#',
+  },
+  {
+    kind:  'certificate',
+    title: 'Responsive Web Design',
+    org:   'freeCodeCamp',
+    start: '2023',
+    end:   '2023',
+    link:  'https://freecodecamp.org/certification/placeholder/responsive-web-design',
+  },
+  {
+    kind:  'certificate',
+    title: 'AWS Cloud Practitioner Essentials',
+    org:   'Amazon Web Services (AWS Educate)',
+    start: '2024',
+    end:   '2024',
+    link:  'https://aws.amazon.com/verification/placeholder',
+  },
+  {
+    kind:  'certificate',
+    title: 'Meta Front-End Developer',
+    org:   'Meta (Coursera)',
+    start: '2024',
+    end:   '2025',
+    link:  'https://coursera.org/verify/professional-cert/placeholder',
+  },
+]
 
 // ── Marquee skill strip ───────────────────────────────────────
 export const MARQUEE_ITEMS = [
